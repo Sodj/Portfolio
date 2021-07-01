@@ -1,84 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+:root{
+    --accent-light: #FC8A17;
+    --accent-dark: #f75f20;
+    --header-height: 100px;
+    --footer-height: 220px;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Nunito, sans-serif;
+    font-family: Poppins, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-*{box-sizing: border-box;}
-.container{background-color: #FAFAFA;}
 
-header {
-    background-color: #222;
-    color: #222;
-    padding: 0 10px;
-    height: 200px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 1px 2px 6px #0004;
-    #title {
-        font: bold 32px 'Ubuntu Mono', monospace;
-        display: inline-block;
-        padding: 5px 40px;
-        margin-top:100px;
-        transform: translateY(-50%);
-        background-color: #EEE;
-        border-radius: 999px;
-        box-shadow: inset 0 3px 6px #0004;
-        border: solid 2px #FFF;
-        text-shadow: 1px 1px 1px #0004;
-    }
+*{box-sizing: border-box;}
+header{
+    height: var(--header-height);
 }
 .content{
-    max-width: 1024px;
-    padding: 20px;
-    margin: auto;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 0 16px;
 }
-#projects{
-    font: bold 24px 'Ubuntu Mono', monospace;
-    margin: 20px 10px;
-}
-.projects{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .project{
-        flex-grow:1;
-        flex-basis: 250px;
-        display: inline-block;
-        width: 250px;
-        //height: 200px;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 4px;
-        background-color: #FFF;
-        box-shadow: 1px 2px 6px #0002;
-        cursor: default;
-        .name{font: bold 18px Nunito;}
-        .type{
-            font: 14px Ubuntu Mono;
-            color: #777;
-            margin-bottom: 10px;
-        }
-        .description{
-            font: 14px Nunito;
-            cursor: default;
-            transition-duration:.2s;
-        }
+.intro{
+    text-align: center;
+    h1{
+        font-size: 64px;
+        font-weight: 600;
     }
+    p{
+        font-size: 24px;
+        max-width: 500px;
+        margin: auto;
+    }
+    img {
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        z-index: -2;
+        filter: opacity(0.4);
+      }
+    .omg {
+        width: calc(100vh * 0.534653); // image ratio
+        height: calc(100vh + 60px);
+        position: fixed;
+        top: -30px;
+        left: 0;
+        z-index: -1;
+        box-shadow: inset -20px 0px 3vh 3vh #fff;
+      }
 }
 footer{
-    background-color: #222;
-    color: #DDD;
-    padding: 0 10px;
-    min-height: 200px;
-    text-align: center;
-    ul{
-        display: inline-block;
-        width:100%;
-        max-width: 1024px;
-        margin: 30px auto;
-        text-align: left;
-        list-style: square;
-    }
+    display: none;
+    background-color: #0001;
+    height: var(--footer-height);
 }
