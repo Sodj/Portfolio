@@ -71,7 +71,7 @@ header {
   z-index: -2;
   filter: opacity(0.4);
 }
-.intro .omg {
+.intro .img-fade {
   width: calc(100vh * 0.534653);
   height: calc(100vh + 60px);
   position: fixed;
