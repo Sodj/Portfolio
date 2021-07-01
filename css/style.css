@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z1xlEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1xlEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlEA.ttf) format('truetype');
+}
+:root {
+  --accent-light: #FC8A17;
+  --accent-dark: #f75f20;
+  --header-height: 100px;
+  --footer-height: 220px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+header {
+  height: var(--header-height);
+}
+.content {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: 0 16px;
+}
+.intro {
+  text-align: center;
+}
+.intro h1 {
+  font-size: 64px;
+  font-weight: 600;
+}
+.intro p {
+  font-size: 24px;
+  max-width: 500px;
+  margin: auto;
+}
+.intro img {
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: -2;
+  filter: opacity(0.4);
+}
+.intro .omg {
+  width: calc(100vh * 0.534653);
+  height: calc(100vh + 60px);
+  position: fixed;
+  top: -30px;
+  left: 0;
+  z-index: -1;
+  box-shadow: inset -20px 0px 3vh 3vh #fff;
+}
+footer {
+  display: none;
+  background-color: #0001;
+  height: var(--footer-height);
+}
