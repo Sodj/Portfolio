@@ -2,6 +2,6 @@
     "less.compile": {
         "compress":  true,  // true => remove surplus whitespace
         "sourceMap": true,  // true => generate source maps (.css.map files)
-        "out":       "./style.css", // false => DON'T output .css files (overridable per-file, see below)
+        "out": "./style.css" // false => DON'T output .css files (overridable per-file, see below)
     }
 }

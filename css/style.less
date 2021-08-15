@@ -8,11 +8,13 @@
 }
 
 body {
+    overscroll-behavior: none;
     margin: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(45deg, #FFF, #FFF, #EEE);
 }
 
 *{box-sizing: border-box;}
@@ -20,12 +22,14 @@ header{
     height: var(--header-height);
 }
 .content{
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    min-height: calc(100vh - var(--header-height));
     padding: 0 16px;
 }
 .intro{
     text-align: center;
     h1{
+        padding: 42px 0;
+        margin: 0;
         font-size: 64px;
         font-weight: 600;
     }
@@ -41,7 +45,7 @@ header{
         left: 0;
         z-index: -2;
         filter: opacity(0.4);
-      }
+    }
     .img-fade {
         width: calc(100vh * 0.534653); // image ratio
         height: calc(100vh + 60px);
@@ -50,7 +54,82 @@ header{
         left: 0;
         z-index: -1;
         box-shadow: inset -20px 0px 3vh 3vh #fff;
-      }
+    }
+    .btn{
+        display: inline-block;
+        background: black;
+        color: white;
+        font-size: 18px;
+        margin-top: 20px;
+        border: none;
+        padding: 0 20px;
+        padding-top: 3px;
+        height: 40px;
+        cursor: pointer;
+        box-shadow: 2px 2px 0px 2px #0004;
+        transition-duration: .2s;
+        &:hover{
+            box-shadow: 0px 0px 0px 2px #0004;
+        }
+    }
+}
+.work{
+    margin-top: 40px;
+    text-align: center;
+    h2{
+        font-size: 32px; 
+        cursor: default;
+        letter-spacing: 2px;
+        border-bottom: solid thin #000;
+        padding: 0 20px;
+        display: inline-block;
+    }
+    .projects{
+        margin: auto;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .project{
+            background: #FFF8;
+            text-align: left;
+            width: 360px;
+            margin-bottom: 32px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 2px 2px 0px 2px #0002;
+            transition-duration: .3s;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            &:hover{
+                box-shadow: 0px 0px 0px 2px #0002;
+            }
+            img{
+                width: 100%;
+                height: 200px;
+                object-position: center -5px;
+                object-fit: cover;
+            }
+            p{
+                flex: 1;
+                margin: 20px 0;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 0 16px;
+            }
+            span{
+                flex: 1;
+                text-align: right;
+                padding: 0 16px;
+                font-size: 14px;
+                color: #777;
+            }
+        }
+    }
 }
 footer{
     display: none;
