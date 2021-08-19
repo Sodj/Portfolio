@@ -5,12 +5,14 @@
 - moving letters (https://tobiasahlin.com/moving-letters)
 - rellax.js (https://dixonandmoe.com/rellax/)
 - animated svg (https://maxwellito.github.io/vivus-instant/)
+- https://lottiefiles.com/
 - winbox.js (https://nextapps-de.github.io/winbox/)
 - custom scroll bars (https://codepen.io/devstreak/pen/dMYgeO)
 
 ---
 #### **Ideas:**
-- use icons for technologies
+- winbox for project details
+- animated svg icons for technologies
 - animated profeciancy bars
 - scroll to animate
 - gate open on load?

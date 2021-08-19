@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#222">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
-
+    
     <title>Sofiane Djouimai's Portfolio</title>
+    <meta name="description" content="Hello, I'm Sofiane Djouimai, I'm a Web & Mobile developer working on both front-end and back-end.">
 
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
+    <div class="loading">Loading ...</div>
+    <div class="gate1"></div>
+    <div class="gate2"></div>
     <div class="container">
         <header>
         </header>
@@ -21,7 +26,7 @@
             <div class="intro">
                 <img src="img/me.jpg" alt="Sofiane Djouimai" />
                 <div class="img-fade"></div>
-                <h1>Hello, I'm Sofiane Djouimai.</h1>
+                <h1 id="title">Hello, I'm Sofiane Djouimai.</h1>
                 <p>I'm a Web & Mobile developer working on both front-end and back-end.</p>
                 <button class="btn contact">CONTACT • ME</button>
             </div>
@@ -31,33 +36,51 @@
                 <div class="projects">
                     <div class="project">
                         <img src="img/bymov.jpg" alt="BYMOV">
-                        <p>BYMOV</p>
-                        <span>2018 — 2021</span>
+                        <div class="info">
+                            <p>BYMOV</p>
+                            <span>2018 — 2021</span>
+                            <div class="description">BYMOV is a free Marketplace where the products are presented as videos.</div>
+                        </div>
                     </div>
                     <div class="project">
                         <img src="img/visiojob.jpg" alt="VisioJob">
-                        <p>VisioJob</p>
-                        <span>2018 — 2021</span>
+                        <div class="info">
+                            <p>VisioJob</p>
+                            <span>2018 — 2021</span>
+                            <div class="description">VisioJob is a video CV platform where people present their career skills in a short video.</div>
+                        </div>
                     </div>
                     <div class="project">
                         <img src="img/wintimeparking.jpg" alt="WinTimeParking">
-                        <p>WinTimeParking</p>
-                        <span>2019 — 2020</span>
+                        <div class="info">
+                            <p>WinTimeParking</p>
+                            <span>2019 — 2020</span>
+                            <div class="description">WinTimeParking is an app the helps you find a parking place quickly with the help of other users.</div>
+                        </div>
                     </div>
                     <div class="project">
                         <img src="img/mypouce.jpg" alt="My">
-                        <p>MyPouce</p>
-                        <span>2015 — 2017</span>
-                    </div>
-                    <div class="project">
-                        <img src="img/kacheeda.jpg" alt="Kacheeda">
-                        <p>Kacheeda</p>
-                        <span>2015</span>
+                        <div class="info">
+                            <p>MyPouce</p>
+                            <span>2015 — 2017</span>
+                            <div class="description">MyPouce is an app where people find and hire professionals of different fields.</div>
+                        </div>
                     </div>
                     <div class="project">
                         <img src="img/oumniah.jpg" alt="Oumniah">
-                        <p>Oumniah</p>
-                        <span>2016</span>
+                        <div class="info">
+                            <p>Oumniah</p>
+                            <span>2016</span>
+                            <div class="description">Oumniah is a platform for the merchants to receive bonuses when ordering products from the supplier.</div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/kacheeda.jpg" alt="Kacheeda">
+                        <div class="info">
+                            <p>Kacheeda</p>
+                            <span>2015</span>
+                            <div class="description">Kacheeda is an e-book Library/Store for buying and reading Arabic literature.</div>
+                        </div>
                     </div>
                 </div>
             </div>
