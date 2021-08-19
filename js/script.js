@@ -17,7 +17,8 @@ document.onreadystatechange = function () {
             opacity: [0, 1],
             easing: "easeOutExpo",
             duration: 1200,
-            delay: (el, i) => 500 + 30 * i
+            delay: (el, i) => 500 + 30 * i,
+            complete: () => {document.querySelector('#title').innerHTML = document.querySelector('#title').innerText;}
         });
     }, 250);
 };
