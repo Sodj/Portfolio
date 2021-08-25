@@ -17,6 +17,42 @@ body {
 }
 
 *{box-sizing: border-box;}
+
+/* Loading */
+
+.gate1,.gate2{
+    background: #353637 url("/img/noise.png");
+
+    min-height: 1em;
+    position: fixed;
+    z-index: 998;
+    top: 0px;
+    bottom: 0px;
+    transition: .7s;
+    transition-timing-function: ease-out;
+    width: 50%;
+}
+.gate1{
+    left: 0px;
+    &.open{left: -50%;}
+}
+.gate2{
+    right: 0px;
+    &.open{right: -50%;}
+}
+.loading{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    color: white;
+    font: 600 3em sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 2px 3px black;
+}
+
 header{
     height: var(--header-height);
 }
@@ -64,6 +100,8 @@ header{
         background: black;
         color: white;
         font-size: 18px;
+        line-height: 36px;
+        text-decoration: none;
         margin-top: 20px;
         border: none;
         padding: 0 20px;
@@ -95,6 +133,7 @@ header{
         flex-wrap: wrap;
         justify-content: space-around;
         .project{
+            &:extend(.blur);
             background: #FFF8;
             text-align: left;
             width: 360px;
@@ -109,13 +148,12 @@ header{
             flex-wrap: wrap;
             align-items: center;
             cursor: pointer;
-            backdrop-filter: blur(10px);
             &:hover{
                 box-shadow: 0px 0px 0px 2px #0002;
                 .info{
+                    &:extend(.blur);
                     top: -200px;
-                    background: #FFF8;
-                    backdrop-filter: blur(10px);
+                    background: #FFF;
                 }
             }
             img{
@@ -164,37 +202,21 @@ footer{
     height: var(--footer-height);
 }
 
-.gate1,.gate2{
-    background: #353637 url("/img/noise.png");
 
-    min-height: 1em;
-    position: fixed;
-    z-index: 998;
-    top: 0px;
-    bottom: 0px;
-    transition: .7s;
-    transition-timing-function: ease-out;
-    width: 50%;
-}
-.gate1{
-    left: 0px;
-    &.open{left: -50%;}
-}
-.gate2{
-    right: 0px;
-    &.open{right: -50%;}
-}
-.loading{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    color: white;
-    font: 600 48px sans-serif;
-    letter-spacing: 1px;
-    text-shadow: 2px 3px black;
-}
 @media screen and(max-width: 1024px) {
     #title{font-size: 42px !important;}
 }
+
+/* slightly transparent fallback */
+.blur {
+    background-color: #FFFE;
+  }
+  
+  /* if backdrop support: very transparent and blurred */
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .blur {
+      background-color: #FFF8;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
