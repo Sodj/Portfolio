@@ -21,4 +21,35 @@ document.onreadystatechange = function () {
             complete: () => {document.querySelector('#title').innerHTML = document.querySelector('#title').innerText;}
         });
     }, 250);
+
+    // Dark Mode
+    var doc_classes = document.documentElement.classList
+    var selected_mode = localStorage.getItem('mode')
+    // prioritize user selected mode
+    if (selected_mode == "dark") doc_classes.add('dark')
+
+    if (!selected_mode){
+        // follow system default
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            doc_classes.add('dark')
+        }
+        // on system mode change
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) doc_classes.add('dark')
+            else doc_classes.remove('dark')
+        })
+    }
+    // on toggle mode
+    document.querySelector("#toggle_mode").addEventListener('click', function() {
+        if (doc_classes.contains('dark')){
+            // turn to light
+            doc_classes.remove('dark')
+            localStorage.setItem('mode', "light")
+        }
+        else {
+            // turn to dark
+            doc_classes.add('dark')
+            localStorage.setItem('mode', "dark")
+        }
+    })
 };

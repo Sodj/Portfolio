@@ -29,12 +29,23 @@
   src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlEA.ttf) format('truetype');
 }
 :root {
-  --accent-light: #FC8A17;
-  --accent-dark: #f75f20;
+  --bg-color: #FFF;
+  --bg-color-8: #FFF8;
+  --text-color: #222;
+  --text-color-light: #777;
   --header-height: 100px;
   --footer-height: 220px;
 }
+.dark:root {
+  --bg-color: #222426;
+  --bg-color-8: #22242688;
+  --text-color-light: #CCC;
+  --text-color: #DDD;
+}
 body {
+  transition-duration: 0.1s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overscroll-behavior: none;
   margin: 0;
   padding: 0;
@@ -84,6 +95,35 @@ body {
 }
 header {
   height: var(--header-height);
+  overflow: hidden;
+}
+#toggle_mode {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-size: 18px;
+  line-height: 18px;
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 32px;
+  width: 32px;
+  border: none;
+  border-radius: 99px;
+  box-shadow: 1px 2px 6px #0004;
+}
+#toggle_mode:active {
+  top: 17px;
+  box-shadow: 1px 1px 1px #0004;
+}
+#toggle_mode .fa-sun {
+  display: none;
+}
+.dark #toggle_mode .fa-moon {
+  display: none;
+}
+.dark #toggle_mode .fa-sun {
+  display: block;
 }
 .content {
   min-height: calc(100vh - var(--header-height));
@@ -123,7 +163,7 @@ header {
   top: -30px;
   left: 0;
   z-index: -1;
-  box-shadow: inset -20px 0px 3vh 3vh #fff;
+  box-shadow: inset -20px 0px 3vh 3vh var(--bg-color);
 }
 .intro .btn {
   display: inline-block;
@@ -152,7 +192,7 @@ header {
   font-size: 32px;
   cursor: default;
   letter-spacing: 2px;
-  border-bottom: solid thin #000;
+  border-bottom: solid thin var(--text-color);
   padding: 0 20px;
   display: inline-block;
 }
@@ -164,7 +204,7 @@ header {
   justify-content: space-around;
 }
 .work .projects .project {
-  background: #FFF8;
+  background: var(--bg-color-8);
   text-align: left;
   width: 360px;
   height: 260px;
@@ -184,7 +224,7 @@ header {
 }
 .work .projects .project:hover .info {
   top: -200px;
-  background: #FFF;
+  background: var(--bg-color);
 }
 .work .projects .project img {
   width: 100%;
@@ -204,7 +244,7 @@ header {
   text-align: right;
   padding: 0 16px;
   font-size: 14px;
-  color: #777;
+  color: var(--text-color-light);
 }
 .work .projects .project .description {
   padding: 16px;
@@ -237,14 +277,14 @@ footer {
 .blur,
 .work .projects .project,
 .work .projects .project:hover .info {
-  background-color: #FFFE;
+  background-color: var(--bg-color-8);
 }
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .blur,
   .work .projects .project,
   .work .projects .project:hover .info {
-    background-color: #FFF8;
+    background-color: var(--bg-color-8);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
