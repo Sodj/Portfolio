@@ -21,3 +21,4 @@
 #### **Design Inspiration:**
 - https://react-portfolio-template.netlify.app/
 - https://niva.lucianionut.com/about-me/
+- https://www.qt.io/
